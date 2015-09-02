@@ -1,7 +1,7 @@
 // Copyright 2014 Vladimir Alyamkin. All Rights Reserved.
 
 #pragma once
-
+#include "IHttpRequest.h"
 #include "VaRestRequestJSON.generated.h"
 
 /** Verb (GET, PUT, POST) used by the request */
