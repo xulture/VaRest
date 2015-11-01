@@ -23,13 +23,13 @@ struct FVaRest_NamedType
 {
 	GENERATED_USTRUCT_BODY();
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category=VaRest)
 	FString Name;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category=VaRest)
 	EVaRest_JsonType Type;
 
-	UPROPERTY(EditAnywhere)
+	UPROPERTY(EditAnywhere, Category=VaRest)
 	bool bIsArray;
 };
 
