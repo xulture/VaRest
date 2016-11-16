@@ -381,7 +381,7 @@ void UVaRestRequestJSON::OnProcessRequestComplete(FHttpRequestPtr Request, FHttp
 	ResponseContent = Response->GetContentAsString();
 
 	// Log response state
-	//UE_LOG(LogVaRest, Log, TEXT("Response (%d): %s"), ResponseCode, *ResponseContent);
+	UE_LOG(LogVaRest, Log, TEXT("Response (%d): %s"), ResponseCode, *ResponseContent);
 
 	// Process response headers
 	TArray<FString> Headers = Response->GetAllHeaders();
