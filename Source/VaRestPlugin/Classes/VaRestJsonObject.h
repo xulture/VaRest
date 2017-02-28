@@ -3,6 +3,17 @@
 
 #pragma once
 
+#include "Runtime/Launch/Resources/Version.h"
+
+#if ENGINE_MINOR_VERSION >= 15
+#include "CoreMinimal.h"
+#include "EngineDefines.h"
+#include "Engine/Engine.h"
+#include "UObject/Object.h"
+#include "UObject/ScriptMacros.h"
+#include "Dom/JsonObject.h"
+#endif
+
 #include "VaRestJsonObject.generated.h"
 
 class UVaRestJsonValue;
