@@ -2,8 +2,11 @@
 
 #pragma once
 
-#include "Engine/LatentActionManager.h"
+#include "Delegate.h"
 #include "Http.h"
+#include "Map.h"
+#include "Json.h"
+#include "LatentActions.h"
 
 #include "VaRestTypes.h"
 #include "VaRestRequestJSON.generated.h"
