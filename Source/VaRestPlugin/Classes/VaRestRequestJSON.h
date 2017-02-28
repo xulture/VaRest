@@ -2,11 +2,8 @@
 
 #pragma once
 
-#include "Delegate.h"
+#include "Engine/LatentActionManager.h"
 #include "Http.h"
-#include "Map.h"
-#include "Json.h"
-#include "LatentActions.h"
 
 #include "VaRestTypes.h"
 #include "VaRestRequestJSON.generated.h"
@@ -116,6 +113,10 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VaRest|Request")
 	void SetBinaryRequestContent(const TArray<uint8> &Content);
 
+	/** Set content of the request as a plain string */
+	UFUNCTION(BlueprintCallable, Category = "VaRest|Request")
+	void SetStringRequestContent(const FString &Content);
+
 	/** Sets optional header info */
 	UFUNCTION(BlueprintCallable, Category = "VaRest|Request")
 	void SetHeader(const FString& HeaderName, const FString& HeaderValue);
@@ -188,6 +189,7 @@ public:
 	//////////////////////////////////////////////////////////////////////////
 	// URL processing
 
+public:
 	/** Open URL with current setup */
 	UFUNCTION(BlueprintCallable, Category = "VaRest|Request")
 	virtual void ProcessURL(const FString& Url = TEXT("http://alyamkin.com"));
@@ -196,6 +198,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "VaRest|Request", meta = (Latent, LatentInfo = "LatentInfo", HidePin = "WorldContextObject", DefaultToSelf = "WorldContextObject"))
 	virtual void ApplyURL(const FString& Url, UVaRestJsonObject *&Result, UObject* WorldContextObject, struct FLatentActionInfo LatentInfo);
 
+protected:
 	/** Apply current internal setup to request and process it */
 	void ProcessRequest();
 
@@ -268,11 +271,12 @@ protected:
 	UPROPERTY()
 	UVaRestJsonObject* RequestJsonObj;
 
-	UPROPERTY()
 	TArray<uint8> RequestBytes;
-
-	UPROPERTY()
 	FString BinaryContentType;
+
+	/** Used for special cases when used wants to have plain string data in request. 
+	 * Attn.! Content-type x-www-form-urlencoded only. */
+	FString StringRequestContent;
 
 	/** Response data stored as JSON */
 	UPROPERTY()
