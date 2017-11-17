@@ -4,8 +4,15 @@
 #include "VaRest_BreakJson.h"
 #include "VaRestEditorPluginPrivatePCH.h"
 
-#include "Runtime/Launch/Resources/Version.h"
+#include "KismetCompiler.h"
+#include "EditorCategoryUtils.h"
 #include "EdGraphUtilities.h"
+#include "EdGraph/EdGraph.h"
+#include "EdGraph/EdGraphNodeUtils.h" // for FNodeTextCache
+#include "BlueprintNodeSpawner.h"
+#include "BlueprintActionDatabaseRegistrar.h"
+
+#include "Runtime/Launch/Resources/Version.h"
 
 #define LOCTEXT_NAMESPACE "VaRest_BreakJson"
 
