@@ -2,7 +2,6 @@
 // Original code by https://github.com/unktomi
 
 #include "VaRestEditorPlugin.h"
-#include "VaRestEditorPluginPrivatePCH.h"
 
 #define LOCTEXT_NAMESPACE "FVaRestEditorPluginModule"
 

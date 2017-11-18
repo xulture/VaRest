@@ -2,7 +2,6 @@
 // Original code by https://github.com/unktomi
 
 #include "VaRest_BreakJson.h"
-#include "VaRestEditorPluginPrivatePCH.h"
 
 #include "KismetCompiler.h"
 #include "EditorCategoryUtils.h"
